@@ -16,8 +16,13 @@ class App < Sinatra::Base
     "The square is #{@answer}."
   end 
   
-  get '/say/:number/:phrase' do 
-  end 
+  get '/say/:number/:phrase' do
+    @num = params[:number].to_i
+    @phrases = params[:phrase]
+    @all_phrases = ""
+    for i in 1..@num
+     @all_phrases+="#{@phrases}\n"
+    end
   
   get '/say/:word1/:word2/:word3/:word4/:word5' do
     @word_1 = params[:word1]
