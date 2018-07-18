@@ -39,5 +39,4 @@ class App < Sinatra::Base
     practice = eval("#{params[:number1]} #{operators[params[:operation]]} #{params[:number2]}")
     return practice.to_s
   end
-end 
 end
