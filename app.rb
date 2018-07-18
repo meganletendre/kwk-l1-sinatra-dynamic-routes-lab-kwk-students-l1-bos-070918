@@ -33,8 +33,10 @@ class App < Sinatra::Base
     "#{@word_1} #{@word_2} #{@word_3} #{@word_4} #{@word_5}."
   end 
   
-  get '/:operation/:number1/:number2' do 
-    
-  end 
+  get '/:operation/:number1/:number2' do
+    operators = {"add"=>"+", "subtract"=>"-", "divide"=>"/", "multiply"=>"*"}
+    practice = eval("#{params[:number1]} #{operators[params[:operation]]} #{params[:number2]}")
+    return practice.to_s
+  end
 
 end
